@@ -1,0 +1,25 @@
+site:
+  title: Name of the site
+  description: "Description used when nothing is overriden in Frontmatter bloc"
+  url: "http://yourwebsite.com"
+
+author:
+  name: Name
+  address: address
+  phone: 01 02 03 04 05 06
+  email: email@yourwebsite.com
+
+social:
+  facebook: "https://facebook.com/yourwebsite"
+  twitter: "https://twitter.com/yourwebsite"
+
+copyright:
+  developer:
+    name: name
+    url: "http://devwebsite.com"
+
+google_analytics:
+  tracking_code: "YOUR-TRACKING-CODE"
+
+disqus:
+  shortname: "yourDisqusShortname"

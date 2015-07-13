@@ -1,4 +1,5 @@
 require 'slim'
+require 'better_errors'
 
 ###
 # Blog settings

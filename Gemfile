@@ -18,6 +18,7 @@ gem 'middleman-minify-html'
 # gem 'middleman-disqus'
 
 gem 'slim', '~> 3.0.2'
+gem 'better_errors'
 gem 'bourbon'
 gem 'neat'
 
