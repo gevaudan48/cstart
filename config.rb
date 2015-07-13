@@ -74,13 +74,6 @@ page "/404.html",    :directory_index => false
 activate :automatic_image_sizes
 
 ###
-# Reload the browser automatically whenever files change
-###
-configure :development do
-  activate :livereload
-end
-
-###
 # Ruby on rails style
 ###
 set :js_dir,     'assets/javascripts'
@@ -101,6 +94,18 @@ end
 Sass::Script::Number.precision = 7
 
 activate :i18n, mount_at_root: :fr
+
+
+###
+# Developement configuration
+###
+configure :development do
+  # Reload the browser automatically whenever files change
+  activate :livereload
+  # BetterErros
+  use BetterErrors::Middleware
+  BetterErrors.application_root = __dir__
+end
 
 ###
 # Deploy with simple FTP
