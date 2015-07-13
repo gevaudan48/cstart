@@ -95,6 +95,11 @@ after_configuration do
   sprockets.append_path File.join "#{root}", @bower_config["directory"]
 end
 
+###
+# Chrome needs a precision of 7 to round properly
+###
+Sass::Script::Number.precision = 7
+
 activate :i18n, mount_at_root: :fr
 
 ###

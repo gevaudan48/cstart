@@ -1,0 +1,124 @@
+// ----------------------------------------------------------------------------
+// Typography variables
+// ----------------------------------------------------------------------------
+
+// Font-family
+$font-stack-sans:    "Open Sans", Helvetica, Arial sans-serif !default;
+$font-stack-serif:   "Merriweather", Garamond, serif !default;
+$font-stack-heading: "Merriweather", Garamond, serif !default;
+
+// Font weight
+$font-weight-light:  300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-bold:   700 !default;
+
+// Font Sizes in px, let em($font-size-x) do the maths
+$font-size-body:     16px !default; //1.125em
+
+$font-size-tiny:     14px !default; //0.875em;
+$font-size-small :   16px !default; //1em;
+$font-size-medium:   18px !default; //1.125em;
+$font-size-large:    24px !default; //1.5em;
+$font-size-xlarge:   36px !default; //2.25em;
+$font-size-xxlarge:  48px !default; // 3em;
+$font-size-xxxlarge: 64px !default; //4em;
+
+$baseline: 1.5 !default;
+$baseline-px: 24px !default;
+
+// Set-font-size mixin
+@mixin set-font-size($size, $line, $margin: 0) {
+  font-size:     em($size);
+  line-height:   em($line * $baseline-px, $size);
+  margin-bottom: em($margin, $size);
+}
+
+
+// ----------------------------------------------------------------------------
+// Typography set
+// ----------------------------------------------------------------------------
+
+html{
+  font-size: $font-size-body;
+  line-height: $baseline;
+}
+
+body{
+  font-size: $font-size-body;
+  line-height: $baseline;
+  background-color: #F5F5F5;
+  @include font-feature-settings("kern", "liga", "pnum");
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  margin: 0;
+  font-family: $font-stack-heading;
+  font-weight: $font-weight-bold;
+}
+
+h1{
+  @include set-font-size($font-size-xxlarge, 3, 24);
+}
+
+h2{
+  @include set-font-size($font-size-xlarge, 2, 24);
+}
+
+h3{
+  @include set-font-size($font-size-large, 2, 24);
+}
+
+h4{
+  @include set-font-size($font-size-medium, 2, 24);
+}
+
+h5,
+h6{
+  @include set-font-size($font-size-small, 1, 24);
+}
+
+p{
+  margin: 0 0 1.5em; 
+}
+
+
+// ----------------------------------------------------------------------------
+// Lists
+// ----------------------------------------------------------------------------
+
+ol,
+ul{
+  margin:  0;
+  padding: 0;
+  list-style-type: none;
+  
+  &%default-ol{
+    margin-bottom: 1.5em;
+    padding-left:  1.5em;
+    list-style-type: circle;
+  }
+
+  &%default-ul{
+    margin-bottom: 1.5em;
+    padding-left:  1.5em;
+    list-style-type: decimal;
+  }
+}
+
+dl{
+  margin-bottom: 1.5em;
+
+  dt{
+    font-weight: $font-weight-bold;
+  }
+
+  dd{
+    margin: 0;
+  }
+}
