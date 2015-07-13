@@ -68,20 +68,31 @@ page "/sitemap.xml", layout: false
 page "/404.html",    :directory_index => false
 
 ###
-# Helpers
-###
-
 # Automatic image dimensions on image_tag helper
+###
 activate :automatic_image_sizes
 
+###
 # Reload the browser automatically whenever files change
+###
 configure :development do
   activate :livereload
 end
 
+###
+# Ruby on rails style
+###
 set :js_dir,     'assets/javascripts'
 set :css_dir,    'assets/stylesheets'
 set :images_dir, 'assets/images'
+
+###
+# Add bower's directory to sprockets asset path
+###
+after_configuration do
+  @bower_config = JSON.parse(IO.read("#{root}/.bowerrc"))
+  sprockets.append_path File.join "#{root}", @bower_config["directory"]
+end
 
 activate :i18n, mount_at_root: :fr
 
@@ -96,8 +107,9 @@ activate :deploy do |deploy|
   deploy.password = ENV['FTP_PASS']
 end
 
-
+###
 # Build-specific configuration
+###
 configure :build do
 
   # Favicon
