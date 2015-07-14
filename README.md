@@ -15,7 +15,7 @@ Install CouicStart template
 Start your project
 
     cd ~/your/project/directory
-    middleman init my_new_project --template=coucistart
+    middleman init my_new_project --template=couicstart
 
 ## License
 
