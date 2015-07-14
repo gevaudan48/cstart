@@ -1,6 +1,6 @@
 site:
   title: Name of the site
-  description: "Description used when nothing is overriden in Frontmatter bloc"
+  description: "Description used when nothing is overriden in Frontmatter block"
   url: "http://yourwebsite.com"
 
 author:
