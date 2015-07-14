@@ -1,0 +1,36 @@
+= wrap_layout :layout do
+  .section
+    .wrapper
+      aside
+        h1 = current_article.title
+        p
+          ' Publié le  
+          span = I18n.l current_page.date, format: '%e %b %Y'
+          '  par 
+          span = current_article.data.author
+      
+      article
+        p = current_article.data.excerpt
+
+        == yield
+
+        nav role= "navigation"
+          ul
+            li
+              - prev_article = current_article.previous_article
+              - if prev_article
+                span 
+                  '  &#9664;
+                = link_to prev_article.title, prev_article.url, 
+                  rel: 'prev', title: "Article précédent: #{prev_article.title}"
+            
+            li
+              - next_article = current_article.next_article
+              - if next_article
+                = link_to next_article.title, next_article.url, 
+                  rel: 'next', title: "Article suivant: #{next_article.title}"
+                span
+                  '  &#9654;
+
+        / Uncomment to add Disqus comments
+        /= disqus

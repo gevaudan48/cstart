@@ -1,0 +1,12 @@
+header.navbar role="banner"
+  .wrapper
+    .navbar__logo
+      = link_to '/' do
+        = image_tag "/assets/images/logo/logo.png", srcset: "/assets/images/logo/logo.png 1x, /images/logo/2x/logo.png 2x", alt: "Logo"
+    nav.navbar__menu role="navigation"
+      button.navbar__toggle id="js-menu-toggle"
+        span.icon-navicon MENU 
+      ul.main-menu id="js-menu"
+        - data.navbar.each do |item|
+          li.main-menu__item
+            = link_to item.title, item.href, class: "main-menu__link"

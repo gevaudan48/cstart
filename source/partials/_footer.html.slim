@@ -1,0 +1,9 @@
+footer.footer
+  .wrapper
+    p.footer__copyright 
+      '  &copy;
+      = Time.now.year
+      '
+      = link_to data.settings.author.name, "/", class: "footer__link"
+      '  - Design and developement :
+      = link_to data.settings.copyright.developer.name, data.settings.copyright.developer.url, class: "footer__link"

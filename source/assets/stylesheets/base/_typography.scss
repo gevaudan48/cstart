@@ -26,6 +26,13 @@ $font-size-xxxlarge: 64px !default; //4em;
 $baseline: 1.5 !default;
 $baseline-px: 24px !default;
 
+// Colors
+$color-body:         #53596C !default;
+$color-heading:      #555861 !default;
+$color-link :        #7E7E7E !default;
+$color-link-visited: #7E7E7E !default;
+$color-link-hover:   lighten($color-link, 15%) !default;
+
 // Set-font-size mixin
 @mixin set-font-size($size, $line, $margin: 0) {
   font-size:     em($size);
@@ -46,7 +53,8 @@ html{
 body{
   font-size: $font-size-body;
   line-height: $baseline;
-  background-color: #F5F5F5;
+  color: $color-body;
+  background-color: #FFF;
   @include font-feature-settings("kern", "liga", "pnum");
   -webkit-font-smoothing: antialiased;
 }
@@ -58,6 +66,7 @@ h4,
 h5,
 h6{
   margin: 0;
+  color: $color-heading;
   font-family: $font-stack-heading;
   font-weight: $font-weight-bold;
 }
@@ -120,5 +129,23 @@ dl{
 
   dd{
     margin: 0;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Links
+// ----------------------------------------------------------------------------
+
+a{
+  color: $color-link;
+
+  &:hover,
+  &:focus,
+  &:active{
+    color: $color-link-hover;
+  }
+
+  &:visited{
+    color: $color-link-visited;
   }
 }

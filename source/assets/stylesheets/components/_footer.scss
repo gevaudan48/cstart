@@ -1,0 +1,29 @@
+// ============================================================================
+// Footer
+// ============================================================================
+
+$footer-font-color:       #5D5D5D !default;
+$footer-font-color-links: #3D3D3D !default;
+$footer-background-color: #F6F6F6 !default;
+
+// Generic styles for the footer
+// ------------------------------------
+.footer{
+  width: 100%;
+  background-color: $footer-background-color;
+  text-align: center;
+  clear: both;
+  
+  &__copyright{
+    padding-top: 1.5em;
+    color: $footer-font-color;
+  }
+
+  &__link{
+    color: $footer-font-color-links;
+
+    &:hover{
+      color: darken($footer-font-color-links, 15%);
+    }
+  }
+}

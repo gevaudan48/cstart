@@ -28,3 +28,6 @@ couicstart.sublime-project
 couicstart.sublime-workspace
 
 Gemfile.lock
+
+# Uncomment to ignore your .env file
+#.env

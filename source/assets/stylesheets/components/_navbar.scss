@@ -1,0 +1,99 @@
+// ============================================================================
+// Navbar
+// ============================================================================
+
+
+$navbar-font-color:       #5D5D5D !default;
+$navbar-shadow-color:     #5D5D5D !default;
+$navbar-background-color: #F6F6F6 !default;
+
+
+// Generic styles for the navbar
+// ------------------------------------
+.navbar{
+  //position: fixed;
+  width: 100%;
+  background-color: $navbar-background-color;
+  z-index: 99;
+
+  &__logo{
+    float: left;
+    padding-top: em(10);
+    min-height:  em(48);
+  }
+
+  &__menu{
+    @include media($medium){
+      float: right;      
+    }
+  }
+
+  &__toggle{
+    display: inline-block;
+    float:   right;
+    margin:  em(7) 0 0 0;
+    padding: em(2) em(5);
+    background-color: transparent;
+    color: $navbar-font-color;
+    font-family: $font-stack-heading;
+    font-size:   $font-size-medium;
+    border: 1px solid #737373;
+    border-radius: em(8,18);
+
+    &:hover{
+      color: darken($navbar-font-color, 15%);
+    }
+
+    @include media($medium){
+      display: none;
+    }
+  }
+}
+
+
+// Main menu
+// ------------------------------------
+.main-menu{
+  clear: both;
+
+  &__item{
+    border-bottom: 1px solid lighten($color-navbar, 5%);
+    text-align: center;
+
+    &:last-child{
+      border: none;
+    }
+
+    @include media($medium){
+      display: inline-block;
+      border: none;
+    }
+  }
+
+  &__link{
+    display: block;
+    padding: em(24,18) 0;
+    color: $navbar-font-color;
+    font-family: $font-stack-heading;
+    font-size:   $font-size-medium;
+    font-weight: 400;
+    text-transform: capitalize;
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:visited{
+      color: darken($navbar-font-color, 15%);
+      box-shadow: 0 em(4,18) 0 $navbar-shadow-color;
+    }
+
+    @include media($medium){
+      padding: em(10,18) em(24,18);
+    }
+  }
+
+  &.is-hidden{
+    display: none;
+  }
+}

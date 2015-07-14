@@ -11,3 +11,7 @@
 .row {
   @include row();
 }
+
+.section{
+  padding : 3em 0;
+}

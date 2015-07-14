@@ -1,0 +1,11 @@
+- title: "Home"
+  href: "/"
+
+- title: "Page 1"
+  href: "/page1.html"
+
+- title: "Page 2"
+  href: "/page2.html"
+
+- title: "Blog"
+  href: "/blog.html"
